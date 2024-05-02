@@ -54,16 +54,16 @@
                     </div>
                 </div>
                 <div class="row bg-white mx-auto py-3">
-                    <div class="col-3 text-center">
-                        <i class="fa fa-bell-o" style="font-size: 22px;"><div style="margin-left: 25px; margin-top: -30px;" class="bg-danger rounded-5 text-light px-1" >9+</div></i>
+                    <div class="col-3 ps-4">
+                        <i class="fa fa-bell-o" style="font-size: 22px;"><div style="margin-left: 10px; margin-top: -30px;" class="bg-danger rounded-5 text-light px-1" >9+</div></i>
                     </div>
                     <div class="col-7">
                         <p class="h5">Notifications</p>
                     </div>
                 </div>
                 <div class="row bg-white mx-auto py-3">
-                    <div class="col-3 text-center">
-                        <i class="fa fa-envelope-o" style="font-size: 22px;"><div style="margin-left: 25px; margin-top: -30px;" class="bg-danger rounded-5 text-light px-2" >6</div></i>
+                    <div class="col-3 ps-4">
+                        <i class="fa fa-envelope-o" style="font-size: 22px;"><div style="margin-left: 10px; margin-top: -30px;" class="bg-danger rounded-5 text-light px-2">6</div></i>
                     </div>
                     <div class="col-7">
                         <p class="h5">Message</p>
@@ -109,32 +109,32 @@
                 <div class="row">
                     <div class="col-1 bg-storie">
                         <img src="images/storie-img-01.png" class="rounded-4 storie" alt="Ma photo de profil !" />
-                        <img src="images/profil.png" class="rad ms-1" style="margin-top: -350px;" alt="Ma photo de profil !" />
+                        <img src="images/profil.png" class="rad ms-2" style="margin-top: -350px;" alt="Ma photo de profil !" />
                         <p class="text-light p-1" style="margin-top: -90px;">Mon Statut</p>
                     </div>
                     <div class="col-1 bg-storie mx-1">
                         <img src="images/storie-img-01.jpg" class="rounded-4 storie" alt="Ma photo de profil !" />
-                        <img src="images/profil.png" class="rad ms-1" style="margin-top: -350px;" alt="Ma photo de profil !" />
+                        <img src="images/profil.png" class="rad ms-2" style="margin-top: -350px;" alt="Ma photo de profil !" />
                         <p class="text-light p-1" style="margin-top: -90px;">Lilla James</p>
                     </div>
                     <div class="col-1 bg-storie">
                         <img src="images/storie-img-02.jpg" class="rounded-4 storie" alt="Ma photo de profil !" />
-                        <img src="images/profil.png" class="rad ms-1" style="margin-top: -350px;" alt="Ma photo de profil !" />
+                        <img src="images/profil.png" class="rad ms-2" style="margin-top: -350px;" alt="Ma photo de profil !" />
                         <p class="text-light p-1" style="margin-top: -90px;">Winnie Hale</p>
                     </div>
                     <div class="col-1 bg-storie mx-1">
                         <img src="images/storie-img-03.jpg" class="rounded-4 storie" alt="Ma photo de profil !" />
-                        <img src="images/profil.png" class="rad ms-1" style="margin-top: -350px;" alt="Ma photo de profil !" />
+                        <img src="images/profil.png" class="rad ms-2" style="margin-top: -350px;" alt="Ma photo de profil !" />
                         <p class="text-light p-1" style="margin-top: -90px;">John Doe</p>
                     </div>
                     <div class="col-1 bg-storie">
                         <img src="images/pub-img-02.png" class="rounded-4 storie" alt="Ma photo de profil !" />
-                        <img src="images/profil.png" class="rad ms-1" style="margin-top: -350px;" alt="Ma photo de profil !" />
+                        <img src="images/profil.png" class="rad ms-2" style="margin-top: -350px;" alt="Ma photo de profil !" />
                         <p class="text-light p-1" style="margin-top: -90px;">M. Durand</p>
                     </div>
                     <div class="col-1 bg-storie mx-1">
                         <img src="images/pub-img-06.png" class="rounded-4 storie" alt="Ma photo de profil !" />
-                        <img src="images/profil.png" class="rad ms-1" style="margin-top: -350px;" alt="Ma photo de profil !" />
+                        <img src="images/profil.png" class="rad ms-2" style="margin-top: -350px;" alt="Ma photo de profil !" />
                         <p class="text-light p-1" style="margin-top: -90px;">Jane Roe</p>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                         <input type="text" class="col-12 bg-white" size="100%" placeholder="Qu'est-ce qui préocupe votre esprit, Jean?">
                     </div>
                     <div class="col-1">
-                        <button class="btn text-light violet-bg rounded-4">Publier</button>
+                        <button class="border-light border py-1 text-light violet-bg rounded-4">Publier</button>
                     </div>
                 </div>
                 <!-- Début Partie de la publication d'un utilisateur -->
@@ -583,7 +583,24 @@
                         </div>
                         <div class="row px-2 d-flex justify-content-between">
                             <div class="col-6">
-                                <i class="fa fa-heart-o"></i>
+                                <i class="fa fa-heart-o" id="coeur" onclick="cliquer()"></i>
+                                <script>
+                                    var nbreCoeur = 0;
+                                    function cliquer() {
+                                        const val = document.getElementById('coeur');
+                                        if (val.classList.contains("fa-heart-o")) {
+                                            val.style.color = "#6c4bf4";
+                                            val.classList.remove("fa-heart-o");
+                                            val.classList.add("fa-heart");
+                                            nbreCoeur++;
+                                        } else if (val.classList.contains("fa-heart")) {
+                                            val.style.color = "black";
+                                            val.classList.remove("fa-heart");
+                                            val.classList.add("fa-heart-o");
+                                            nbreCoeur--;
+                                        }
+                                    }
+                                </script>
                                 <i class="fa fa-comment-o px-2"></i>
                                 <i class="fa fa-share-alt"></i>
                             </div>
@@ -631,15 +648,15 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col underline">
-                                Primary
+                                <strong>Primary</strong>
                             </div>
                             <div class="col">
-                                General
+                                <strong>General</strong>
                             </div>
                             <div class="col violet">
-                                Requests(7)
+                                <strong>Requests(7)</strong>
                             </div>
-                            <hr class="mt-2" style="height: 5px; background-color: gray; width: 100%;">
+                            <hr class="mt-3" style="height: 5px; background-color: gray; width: 100%;">
                         </div>
                         <div class="row mb-2">
                             <div class="col-2 ps-4">
@@ -653,7 +670,7 @@
                         <div class="row">
                             <div class="col-2 ps-4">
                                 <img src="images/storie-img-01.png" class="img-header1 mb-3" alt="Ma photo" />
-                                <p class="px-2" style="font-size: 100px; margin-top:-60px; margin-left: 25px; color: rgb(34, 255, 34)">.</p>
+                                <p class="px-2" style="font-size: 80px; margin-top:-50px; margin-left: 22px; color: rgb(34, 255, 34)">.</p>
                             </div>
                             <div class="col-8 ps-4 mx-3 my-2" style="line-height: 5px;">
                                 <strong><p>Franca Della</p></strong>
@@ -672,7 +689,7 @@
                         <div class="row my-2">
                             <div class="col-2 ps-4">
                                 <img src="images/storie-img-03.jpg" class="img-header1 mb-3" alt="Ma photo" />
-                                <p class="px-2" style="font-size: 100px; margin-top:-60px; margin-left: 25px; color: rgb(34, 255, 34)">.</p>
+                                <p class="px-2" style="font-size: 80px; margin-top:-50px; margin-left: 22px; color: rgb(34, 255, 34)">.</p>
                             </div>
                             <div class="col-8 ps-4 mx-3 my-2" style="line-height: 5px;">
                                 <strong><p>Daniella Jackson</p></strong>
@@ -691,7 +708,7 @@
                         <div class="row my-2">
                             <div class="col-2 ps-4">
                                 <img src="images/pub-img-06.png" class="img-header1 mb-3" alt="Ma photo" />
-                                <p class="px-2" style="font-size: 100px; margin-top:-60px; margin-left: 25px; color: rgb(34, 255, 34)">.</p>
+                                <p class="px-2 border border-danger" style="font-size: 80px; margin-top:-50px; margin-left: 22px; color: rgb(34, 255, 34); border: 2px solid #6c4bf4;">.</p>
                             </div>
                             <div class="col-8 ps-4 mx-3 my-2" style="line-height: 5px;">
                                 <strong><p>Chantel Amzio</p></strong>
